@@ -27,7 +27,7 @@ const BeerList: React.FC = () => {
   const [totalPages, setTotalPages] = useState(0);
   const [controller, setController] = useState<BeerListController>({
     page: 1,
-    per_page: 10,
+    per_page: 8,
   });
 
   useEffect(() => {
@@ -63,7 +63,7 @@ const BeerList: React.FC = () => {
 
       <section>
         <header>
-          <h1>BeerList page</h1>
+          <h1>Beers Listing</h1>
         </header>
         <main>
           <List>

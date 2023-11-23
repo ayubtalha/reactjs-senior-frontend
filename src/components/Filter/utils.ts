@@ -1,31 +1,27 @@
-export const getTypeString = (filterType: string) => {
-  switch (filterType) {
-    case 'by_city':
-      return 'city';
-    case 'by_name':
-      return 'name';
-    case 'by_state':
-      return 'state';
-    case 'by_postal':
-      return 'postal';
-    case 'by_country':
-      return 'country';
-    case 'by_type':
-      return 'type';
-    default:
-      return 'Unknown';
-  }
+export const getTypeString = (filterType: string): string => {
+  const typeMap: Record<string, string> = {
+    by_city: 'city',
+    by_name: 'name',
+    by_state: 'state',
+    by_postal: 'postal',
+    by_country: 'country',
+    by_type: 'type',
+    default: 'Unknown',
+  };
+
+  return typeMap[filterType] || typeMap.default;
 };
 
 export const getSortString = (
   filter: string,
   optionalFilter: string | undefined,
   sortOption: string
-) => {
-  if (optionalFilter) {
-    return `${filter},${optionalFilter}:${sortOption}` as SORT;
-  }
-  return `${filter}:${sortOption}` as SORT;
+): SORT => {
+  const sortString = optionalFilter
+    ? (`${filter},${optionalFilter}:${sortOption}` as SORT)
+    : (`${filter}:${sortOption}` as SORT);
+
+  return sortString as SORT;
 };
 
 export type SORT = 'asc' | 'desc';
@@ -38,10 +34,7 @@ export interface BeerFilterProps {
   ) => void;
 }
 
-export const sortingOptions: {
-  value: string;
-  label: string;
-}[] = [
+export const sortingOptions: { value: string; label: string }[] = [
   { value: 'by_name', label: 'Name' },
   { value: 'by_city', label: 'City' },
   { value: 'by_dist', label: 'Distance' },
