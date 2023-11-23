@@ -9,7 +9,7 @@ interface Props {
 const TopBar = (props: Props) => {
   return (
     <AppBar
-      position="fixed"
+      position='fixed'
       sx={{
         width: { sm: `calc(100% - ${props.drawerWidth}px)` },
         ml: { sm: `${props.drawerWidth}px` },
@@ -17,20 +17,20 @@ const TopBar = (props: Props) => {
     >
       <Toolbar>
         <IconButton
-          color="inherit"
-          aria-label="open drawer"
-          edge="start"
+          color='inherit'
+          aria-label='open drawer'
+          edge='start'
           onClick={props.handleDrawerToggle}
           sx={{ mr: 2, display: { sm: 'none' } }}
         >
           <MenuIcon />
         </IconButton>
-        <Typography variant="h6" noWrap component="div">
-          V
+        <Typography variant='h6' noWrap component='div'>
+          The Cool Beer
         </Typography>
       </Toolbar>
     </AppBar>
-    );
-  }
+  );
+};
 
 export default TopBar;

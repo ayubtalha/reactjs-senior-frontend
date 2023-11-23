@@ -3,7 +3,9 @@ import styles from './Footer.module.css';
 const Footer = () => {
   return (
     <footer className={styles.container}>
-      <div className={styles.inner}>&#169; 2023 </div>
+      <a href='https://github.com/ayubtalha'>
+        <div className={styles.inner}>@Talha Ayub - Software Engineer</div>
+      </a>
     </footer>
   );
 };

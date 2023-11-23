@@ -27,7 +27,7 @@ const BeerList: React.FC = () => {
   const [totalPages, setTotalPages] = useState(0);
   const [controller, setController] = useState<BeerListController>({
     page: 1,
-    per_page: 8,
+    per_page: 13,
   });
 
   useEffect(() => {
